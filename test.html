@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dish Selection</title>
+    <style>
+        .grid-wrapper ul {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            list-style: none;
+            padding: 0;
+            max-width: 400px;
+            margin: auto;
+        }
+        .grid-wrapper li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>RICE/NOODLES</h1>
+    <form action="#" method="post">
+        <div class="grid-wrapper">
+            <ul>
+                <li>
+                    <input type="checkbox" name="dishes" value="Yang Chow Fried Rice">
+                    Yang Chow Fried Rice
+                </li>
+                <li>
+                    <input type="checkbox" name="dishes" value="Yam Rice W Mushroom">
+                    Yam Rice W Mushroom
+                </li>
+                <li>
+                    <input type="checkbox" name="dishes" value="Thai Pineapple Fried Rice">
+                    Thai Pineapple Fried Rice
+                </li>
+                <li>
+                    <input type="checkbox" name="dishes" value="Sin Chow Mee Hoon">
+                    Sin Chow Mee Hoon
+                </li>
+                <li>
+                    <input type="checkbox" name="dishes" value="Spaghetti Aglio Olio">
+                    Spaghetti Aglio Olio(+0.80)
+                </li>
+                <li>
+                    <input type="checkbox" name="dishes" value="Fried Hong Kong Mee">
+                    Fried Hong Kong Mee
+                </li>
+                <li>
+                    <input type="checkbox" name="dishes" value="Sambal Fried Rice">
+                    Sambal Fried Rice
+                </li>
+            </ul>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+    <script>
+        // Initialise Matomo Tracker
+        
+
+        // Function to Track Checkbox Selections
+        function trackDishSelection(checkbox) {
+            var dishName = checkbox.nextSibling.textContent.trim(); // Get the text of the dish
+            var action = checkbox.checked ? 'Selected' : 'Deselected'; // Track whether selected or deselected
+            _paq.push(['trackEvent', 'Dish Selection', action, dishName]);
+            console.log(`Dish: ${dishName}, Action: ${action}`); // For debugging
+        }
+    </script>
+</body>
+</html>
