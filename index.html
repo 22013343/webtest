@@ -4,182 +4,153 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CaterDash</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #FAF8F5;
-    }
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #FAF8F5;
+  }
+  header {
+    background-image: url('images/header.jpeg');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    color: white;
+    padding: 50px 20px;
+  }
+  header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+  }
+  header p {
+    font-size: 1.2em;
+  }
+  .menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 40px 20px;
+  }
+  .menu-item {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+  }
+  .menu-item img {
+    width: 100%;
+    height: auto;
+  }
+  .menu-item h3 {
+    padding: 10px;
+  }
+  .ai-menu-section {
+    background-color: #C30010;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+  }
+  .ai-menu-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  .ai-menu-form input, .ai-menu-form button {
+    padding: 10px;
+    font-size: 1em;
+    flex: 1 1 auto;
+    min-width: 150px;
+  }
+  .best-sellers {
+    padding: 40px 20px;
+    text-align: center;
+  }
+  .best-sellers h2 {
+    margin-bottom: 20px;
+  }
+  .seller-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  .seller-item {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+  }
+  .why-section {
+    background: #f7f7f7;
+    padding: 40px 20px;
+    text-align: center;
+  }
+  .footer {
+    background: black;
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+  .footer a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+  }
+
+  /* Media Queries for Responsive Design */
+  @media (max-width: 768px) {
     header {
-      background-image: url('images/header.jpeg');
-      background-size: cover;
-      background-position: center;
-      text-align: center;
-      color: white;
-      padding: 100px 20px;
+      padding: 30px 20px;
     }
     header h1 {
-      font-size: 3em;
-      margin-bottom: 10px;
+      font-size: 2em;
     }
     header p {
-      font-size: 1.5em;
-    }
-    .menu-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      padding: 40px 20px;
-    }
-    .menu-item {
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
-      text-align: center;
-    }
-    .menu-item img {
-      width: 100%;
-      height: auto;
-    }
-    .menu-item h3 {
-      padding: 10px;
-    }
-    .ai-menu-section {
-      background-color: #C30010;
-      color: white;
-      text-align: center;
-      padding: 40px 20px;
-    }
-    .ai-menu-form {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin-top: 20px;
+      font-size: 1em;
     }
     .ai-menu-form input, .ai-menu-form button {
-      padding: 10px;
-      font-size: 1em;
+      min-width: 120px;
     }
-    .best-sellers {
-      padding: 40px 20px;
-      text-align: center;
-    }
-    .best-sellers h2 {
-      margin-bottom: 20px;
-    }
-    .seller-grid {
-      display: grid;
+    .menu-grid {
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
     }
-    .seller-item {
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      padding: 20px;
-      text-align: center;
-    }
-    .why-section {
-      background: #f7f7f7;
-      padding: 40px 20px;
-      text-align: center;
-    }
-    .footer {
-      background: black;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-    .footer a {
-      color: white;
-      text-decoration: none;
-      margin: 0 10px;
-    }
-        .best-sellers {
-      text-align: center;
-      padding: 40px 20px;
-    }
-
-    .best-sellers h2 {
-      margin-bottom: 30px;
-      font-size: 2em;
-      color: #333;
-    }
-
     .seller-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      justify-content: center;
-      align-items: center;
-      margin: 0 auto;
-      padding: 0 20px;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     }
-
     .seller-item {
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
-      text-align: center;
       padding: 15px;
-      transition: transform 0.2s ease-in-out;
     }
+    .best-sellers h2 {
+      font-size: 1.5em;
+    }
+  }
 
-    .seller-item img {
+  @media (max-width: 480px) {
+    header h1 {
+      font-size: 1.8em;
+    }
+    header p {
+      font-size: 0.9em;
+    }
+    .ai-menu-section {
+      padding: 30px 10px;
+    }
+    .ai-menu-form {
+      flex-direction: column;
+    }
+    .ai-menu-form input, .ai-menu-form button {
       width: 100%;
-      height: auto;
-      border-radius: 10px 10px 0 0;
-    }
-
-    .seller-item h3 {
-      margin: 15px 0 10px;
-      font-size: 1.2em;
-      color: #333;
-    }
-
-    .price-section {
-      color: #C30010;
-      font-weight: bold;
       margin-bottom: 10px;
     }
-
-    .price-section span {
-      color: gray;
-      font-size: 0.9em;
+    .menu-grid, .seller-grid {
+      grid-template-columns: 1fr;
     }
-
-    .details {
-      font-size: 0.9em;
-      color: #666;
-    }
-
-    .view-more {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 10px 20px;
-      background: none;
-      border: 2px solid #C30010;
-      color: #C30010;
-      border-radius: 5px;
-      font-size: 1em;
-      font-weight: bold;
-      text-decoration: none;
-      cursor: pointer;
-      transition: background 0.3s, color 0.3s;
-    }
-
-    .view-more:hover {
-      background: #C30010;
-      color: white;
-    }
-
-    .seller-item:hover {
-      transform: translateY(-5px);
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
 
