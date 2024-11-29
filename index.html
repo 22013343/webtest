@@ -3,315 +3,172 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CaterDash - Bringing People Together</title>
+  <title>CaterDash</title>
   <style>
     body {
       font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #FAF8F5;
     }
     header {
+      background-image: url('your-banner-image.jpg');
+      background-size: cover;
+      background-position: center;
+      text-align: center;
+      color: white;
+      padding: 100px 20px;
+    }
+    header h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 1.5em;
+    }
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 40px 20px;
+    }
+    .menu-item {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      text-align: center;
+    }
+    .menu-item img {
+      width: 100%;
+      height: auto;
+    }
+    .menu-item h3 {
+      padding: 10px;
+    }
+    .ai-menu-section {
       background-color: #C30010;
       color: white;
-      font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
-      padding: 10px 20px;
       text-align: center;
-      border-bottom: 1px solid #ddd;
-      font-style: italic; 
-      font-weight: bold;
+      padding: 40px 20px;
     }
-    header div {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px; /* Space between image and text */
-    }
-
-    header img {
-    width: 150px; /* Adjust size as needed */
-    height: 100px; /* Maintain aspect ratio */
-    }
-    nav {
-      background-color: #f5f5f5;
-      color: grey;
-      padding: 10px;
+    .ai-menu-form {
       display: flex;
-      justify-content: space-around;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
     }
-    nav a {
-      color: grey;
-      text-decoration: none;
-      font-weight: bold;
+    .ai-menu-form input, .ai-menu-form button {
+      padding: 10px;
+      font-size: 1em;
     }
-    .container {
-      padding: 20px;
-      max-width: 1200px;
-      margin: auto;
-    }
-    h1 {
+    .best-sellers {
+      padding: 40px 20px;
       text-align: center;
+    }
+    .best-sellers h2 {
       margin-bottom: 20px;
     }
-    .grid-wrapper ul {
+    .seller-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      list-style: none;
-      padding: 0;
-      max-width: 400px;
-      margin: auto;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
     }
-    .grid-wrapper li {
-      display: flex;
-      align-items: center;
-      gap: 10px;
+    .seller-item {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      text-align: center;
     }
-    .grid-wrapper {
-      margin-bottom: 30px;
+    .why-section {
+      background: #f7f7f7;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .footer {
+      background: black;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    .footer a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
     }
   </style>
 </head>
 <body>
-  <!-- Header -->
+
+  <!-- Header Section -->
   <header>
-      <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
-    <img src="images/Generated logo5.jpg" alt="CaterDash Logo" style="width: 70px; height: 70px;">
     <h1>CaterDash</h1>
-  </div>
+    <p>Your go-to platform for effortless catering</p>
   </header>
 
-  <!-- Navigation Bar -->
-  <nav>
-    <a href="#">Home</a>
-    <a href="#">Log In</a>
-  </nav>
+  <!-- All Menus Section -->
+  <section class="menu-grid">
+    <div class="menu-item">
+      <img src="buffet1.jpg" alt="Buffet">
+      <h3>Mini Buffet</h3>
+    </div>
+    <div class="menu-item">
+      <img src="buffet2.jpg" alt="Buffet">
+      <h3>Classic Buffet</h3>
+    </div>
+    <div class="menu-item">
+      <img src="buffet3.jpg" alt="Buffet">
+      <h3>Premium Buffet</h3>
+    </div>
+    <div class="menu-item">
+      <img src="buffet4.jpg" alt="Buffet">
+      <h3>Packed Meals</h3>
+    </div>
+  </section>
 
-  <!-- Main Content -->
-  <div class="container">
-    <!-- Rice/Noodles Section -->
-    <section id="rice-noodles">
-      <h1>RICE/NOODLES</h1>
-      <form id="dishForm">
-        <div class="grid-wrapper">
-          <ul>
-            <li>
-              <input type="checkbox" name="dishes" value="Yang Chow Fried Rice" data-category="Rice" data-price="0">
-              Yang Chow Fried Rice
-            </li>
-            <li>
-              <input type="checkbox" name="dishes" value="Yam Rice W Mushroom" data-category="Rice" data-price="0">
-              Yam Rice W Mushroom
-            </li>
-            <li>
-              <input type="checkbox" name="dishes" value="Thai Pineapple Fried Rice" data-category="Rice" data-price="0">
-              Thai Pineapple Fried Rice
-            </li>
-            <li>
-              <input type="checkbox" name="dishes" value="Sin Chow Mee Hoon" data-category="Noodles" data-price="0">
-              Sin Chow Mee Hoon
-            </li>
-            <li>
-              <input type="checkbox" name="dishes" value="Spaghetti Aglio Olio" data-category="Pasta" data-price="0">
-              Spaghetti Aglio Olio (+0.80)
-            </li>
-            <li>
-              <input type="checkbox" name="dishes" value="Fried Hong Kong Mee" data-category="Noodles" data-price="0">
-              Fried Hong Kong Mee
-            </li>
-            <li>
-              <input type="checkbox" name="dishes" value="Sambal Fried Rice" data-category="Rice" data-price="0">
-              Sambal Fried Rice
-            </li>
-          </ul>
-        </div>
-      </form>
-    </section>
+  <!-- AI-Generated Menu Section -->
+  <section class="ai-menu-section">
+    <h2>Want a Unique Menu? Try our AI-Generated Menu!</h2>
+    <div class="ai-menu-form">
+      <input type="text" placeholder="Cuisine Type">
+      <input type="text" placeholder="Number of People">
+      <button>Generate Menu</button>
+    </div>
+  </section>
 
-    <!-- Vegetables/Beancurd Section -->
-    <section id="vegetables-beancurd">
-      <h1>VEGETABLES/BEANCURD</h1>
-      <form>
-        <div class="grid-wrapper">
-          <ul>
-            <li>
-              <input type="radio" name="vegetables" value="Chap Chye w Black Fungus" data-category="Vegetables" data-price="0">
-              Chap Chye w Black Fungus
-            </li>
-            <li>
-              <input type="radio" name="vegetables" value="Loh Han Vegetable" data-category="Vegetables" data-price="0">
-              Loh Han Vegetable
-            </li>
-            <li>
-              <input type="radio" name="vegetables" value="Oyster Kai Lan w Mushroom" data-category="Vegetables" data-price="0">
-              Oyster Kai Lan w Mushroom
-            </li>
-            <li>
-              <input type="radio" name="vegetables" value="Mushroom Broccoli" data-category="Vegetables" data-price="0">
-              Mushroom Broccoli
-            </li>
-            <li>
-              <input type="radio" name="vegetables" value="Neo's Tofu w Broccoli" data-category="Vegetables" data-price="0">
-              Neo's Tofu w Broccoli (+0.80)
-            </li>
-            <li>
-              <input type="radio" name="vegetables" value="Braised Beancurd" data-category="Beancurd" data-price="0">
-              Braised Beancurd
-            </li>
-          </ul>
-        </div>
-      </form>
-    </section>
-  </div>
+  <!-- Best Sellers Section -->
+  <section class="best-sellers">
+    <h2>Buffet Best Sellers</h2>
+    <div class="seller-grid">
+      <div class="seller-item">
+        <img src="dish1.jpg" alt="Dish">
+        <h3>Dish 1</h3>
+        <p>$12.99</p>
+      </div>
+      <div class="seller-item">
+        <img src="dish2.jpg" alt="Dish">
+        <h3>Dish 2</h3>
+        <p>$14.99</p>
+      </div>
+    </div>
+  </section>
 
-  <!-- Submit Button -->
-  <div id="submit" style="text-align: center; margin: 20px;">
-    <button id="submitButton" style="padding: 10px 20px;">Submit Selection</button>
-  </div>
+  <!-- Why CaterDash Section -->
+  <section class="why-section">
+    <h2>Why Choose CaterDash?</h2>
+    <p>Fast preparation times, affordable pricing, curated meals for all occasions.</p>
+  </section>
 
-  <!-- Matomo -->
-  <script>
-    var _paq = window._paq = window._paq || [];
-    _paq.push(['trackPageView']);
-    _paq.push(['enableLinkTracking']);
-    (function() {
-      var u="https://tracker.neogroup.com.sg/";
-      _paq.push(['setTrackerUrl', u+'matomo.php']);
-      _paq.push(['setSiteId', '']);
-      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-      g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
-    })();
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2024 CaterDash. All Rights Reserved.</p>
+    <p>
+      <a href="#">Privacy Policy</a> | 
+      <a href="#">Terms of Service</a> | 
+      <a href="#">Contact Us</a>
+    </p>
+  </footer>
 
-  // Maintain a list of valid checkbox selections (max 2)
-  let validDishSelections = [];
-
-  // Add event listeners for checkboxes
-  document.querySelectorAll('input[name="dishes"]').forEach(checkbox => {
-    checkbox.addEventListener('change', function () {
-      const selectedItems = document.querySelectorAll('input[name="dishes"]:checked');
-
-      if (selectedItems.length > 2) {
-        alert('You can only select up to 2 dishes.');
-        this.checked = false; // Force deselection of the last selected checkbox
-        logCheckboxEvent(this, 'Deselected', true); // Log force deselection
-        updateCart(this, 'deselected', 'dish'); // Remove from the cart
-      } else {
-        logCheckboxEvent(this, this.checked ? 'Selected' : 'Deselected', false); // Log user action
-        updateCart(this, this.checked ? 'selected' : 'deselected', 'dish');
-      }
-    });
-  });
-
-  // Function to log checkbox events
-  function logCheckboxEvent(checkbox, action, isForced) {
-    const dishId = checkbox.value;
-    const categoryName = checkbox.getAttribute('data-category');
-    const price = parseFloat(checkbox.getAttribute('data-price'));
-
-    // Track the event in Matomo
-    const eventLabel = isForced ? 'Force Deselection' : action;
-    _paq.push(['trackEvent', 'Dish Selection', eventLabel, dishId, price]);
-    console.log(`Event tracked: ${eventLabel} - ${dishId}, Category: ${categoryName}, Price: $${price}`);
-  }
-
-// Maintain a valid vegetable selection (radio buttons)
-let validVegSelection = null;
-
-// Add event listeners for radio buttons
-document.querySelectorAll('input[name="vegetables"]').forEach(radio => {
-  radio.addEventListener('change', function () {
-    // Log the deselection of the previously selected vegetable, if applicable
-    if (validVegSelection && validVegSelection !== this) {
-      const previousVegId = validVegSelection.value;
-      const previousCategoryName = validVegSelection.getAttribute('data-category');
-      const previousPrice = parseFloat(validVegSelection.getAttribute('data-price'));
-
-      // Log deselection event
-      _paq.push(['trackEvent', 'Vegetable Selection', 'Deselected', previousVegId, previousPrice]);
-      console.log(`Event tracked: Deselected - ${previousVegId}, Category: ${previousCategoryName}, Price: $${previousPrice}`);
-
-      // Remove the previously selected vegetable from the eCommerce cart
-      _paq.push(['removeEcommerceItem', previousVegId]);
-      console.log(`Vegetable removed from cart: ${previousVegId}`);
-    }
-
-    // Update the valid vegetable selection
-    validVegSelection = this;
-
-    // Log the selection of the new vegetable
-    const newVegId = this.value;
-    const newCategoryName = this.getAttribute('data-category');
-    const newPrice = parseFloat(this.getAttribute('data-price'));
-
-    // Log selection event
-    _paq.push(['trackEvent', 'Vegetable Selection', 'Selected', newVegId, newPrice]);
-    console.log(`Event tracked: Selected - ${newVegId}, Category: ${newCategoryName}, Price: $${newPrice}`);
-
-    // Add the newly selected vegetable to the eCommerce cart
-    _paq.push(['addEcommerceItem', newVegId, newVegId, newCategoryName, newPrice, 1]);
-    console.log(`Vegetable added to cart: ${newVegId}, Price: ${newPrice}`);
-  });
-});
-
-  // Function to handle cart updates dynamically
-  function updateCart(item, action, type) {
-    const id = item.value;
-    const categoryName = item.getAttribute('data-category');
-    const price = parseFloat(item.getAttribute('data-price'));
-
-    if (action === 'selected') {
-      // Add to eCommerce cart
-      _paq.push(['addEcommerceItem', id, id, categoryName, price, 1]);
-      console.log(`${type} added to cart: ${id}, Price: ${price}`);
-      if (type === 'dish') validDishSelections.push(item);
-    } else if (action === 'deselected') {
-      // Remove from eCommerce cart
-      _paq.push(['removeEcommerceItem', id]);
-      console.log(`${type} removed from cart: ${id}`);
-      if (type === 'dish') {
-        validDishSelections = validDishSelections.filter(dish => dish !== item);
-      }
-    }
-
-    validateCart();
-  }
-
-  // Ensure the cart always reflects valid quantities and selections
-  function validateCart() {
-    // Ensure only 2 dishes are valid
-    if (validDishSelections.length > 2) {
-      const removedDish = validDishSelections.shift(); // Remove the earliest added dish
-      removedDish.checked = false;
-      updateCart(removedDish, 'deselected', 'dish');
-    }
-
-    // Log current cart state for debugging
-    console.log('Current valid dishes:', validDishSelections.map(dish => dish.value));
-    if (validVegSelection) {
-      console.log('Current valid vegetable:', validVegSelection.value);
-    }
-  }
-
-// Submit Form
-document.getElementById('submitButton').addEventListener('click', function () {
-  const orderId = `ORDER-${Date.now()}`;
-  const validDishes = validDishSelections.map(dish => ({
-    id: dish.value,
-    category: dish.getAttribute('data-category'),
-    price: 0 // Always $0
-  }));
-
-  const validVegetable = validVegSelection
-    ? {
-        id: validVegSelection.value,
-        category: validVegSelection.getAttribute('data-category'),
-        price: 0 // Always $0
-      }
-    : null;
-
-  // Store the data in local storage
-  localStorage.setItem('cartItems', JSON.stringify({ validDishes, validVegetable, orderId }));
-
-  // Redirect to the cart page
-  window.location.href = 'cart.html';
-});
-  </script>
 </body>
-</html> 
+</html>
