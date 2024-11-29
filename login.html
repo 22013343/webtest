@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CaterDash - Login</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #FAF8F5;
+    }
+    header {
+      background-color: #C30010;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+    }
+    header h1 {
+      margin: 0;
+      font-style: italic;
+      font-weight: bold;
+    }
+    .login-container {
+      max-width: 400px;
+      margin: 50px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    .login-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+    .login-container form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .login-container input {
+      padding: 10px;
+      font-size: 1em;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    .login-container button {
+      background-color: #C30010;
+      color: white;
+      padding: 10px;
+      font-size: 1em;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .login-container button:hover {
+      background-color: #a10e26;
+    }
+    .register-link {
+      text-align: center;
+      margin-top: 10px;
+    }
+    .register-link a {
+      color: #C30010;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .register-link a:hover {
+      text-decoration: underline;
+    }
+    footer {
+      background: black;
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>CaterDash</h1>
+  </header>
+  
+  <div class="login-container">
+    <h2>Login to CaterDash</h2>
+    <form action="dashboard.html" method="post">
+      <input type="email" name="email" placeholder="Enter your email" required>
+      <input type="password" name="password" placeholder="Enter your password" required>
+      <button type="submit">Log In</button>
+    </form>
+    <div class="register-link">
+      <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 CaterDash. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
