@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CaterDash - Menu</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #FAF8F5;
+    }
+    header {
+      background-color: #C30010;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+    }
+    header img {
+      height: 50px;
+    }
+    header nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+    header .user-options {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    header .cart {
+      position: relative;
+    }
+    header .cart img {
+      height: 24px;
+    }
+    header .cart span {
+      position: absolute;
+      top: -5px;
+      right: -10px;
+      background: red;
+      color: white;
+      font-size: 12px;
+      padding: 2px 5px;
+      border-radius: 50%;
+    }
+    .container {
+      display: flex;
+      padding: 20px;
+      gap: 20px;
+    }
+    .filters {
+      flex: 1;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    .filters h3 {
+      margin-bottom: 15px;
+      color: #C30010;
+    }
+    .filters ul {
+      list-style: none;
+      padding: 0;
+    }
+    .filters ul li {
+      margin-bottom: 10px;
+    }
+    .filters ul li label {
+      font-size: 0.9em;
+    }
+    .filters ul li input {
+      margin-right: 10px;
+    }
+    .menu {
+      flex: 3;
+    }
+    .menu-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .menu-header h2 {
+      font-size: 1.5em;
+      color: #333;
+    }
+    .menu-header select {
+      padding: 5px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .menu-item {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      overflow: hidden;
+      position: relative;
+    }
+    .menu-item img {
+      width: 100%;
+      height: auto;
+    }
+    .menu-item h3 {
+      margin: 10px 0;
+    }
+    .menu-item p {
+      margin: 5px 0;
+    }
+    .menu-item .price {
+      font-size: 1em;
+      color: #C30010;
+      font-weight: bold;
+    }
+    .menu-item .price span {
+      font-size: 0.8em;
+      color: gray;
+    }
+    .menu-item .most-ordered {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: #C30010;
+      color: white;
+      padding: 5px 10px;
+      font-size: 0.8em;
+      border-radius: 5px;
+    }
+    .footer {
+      background: black;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    .footer a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div>
+      <img src="images/logo.png" alt="CaterDash Logo">
+    </div>
+    <nav>
+      <a href="buffet.html">Buffet</a>
+      <a href="bento.html">Bento</a>
+      <a href="aboutUs.html">About Us</a>
+      <a href="contactUs.html">Contact</a>
+    </nav>
+    <div class="user-options">
+      <a href="login.html" style="color: white; text-decoration: none; font-weight: bold; border: 1px solid white; padding: 5px 10px; border-radius: 20px;">Log In / Sign Up</a>
+      <div class="cart">
+        <img src="images/avf7f2ncu.jpg" alt="Cart">
+        <span>0</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <div class="container">
+    <!-- Filters -->
+    <aside class="filters">
+      <h3>Filters</h3>
+      <div>
+        <h4>Menu</h4>
+        <ul>
+          <li><label><input type="checkbox"> All Menus</label></li>
+          <li><label><input type="checkbox"> Mini Buffet</label></li>
+          <li><label><input type="checkbox"> Classic Buffet</label></li>
+          <li><label><input type="checkbox"> Premium Buffet</label></li>
+          <li><label><input type="checkbox"> High Tea Buffet</label></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Budget</h4>
+        <ul>
+          <li><label><input type="checkbox"> $10-$15/pax</label></li>
+          <li><label><input type="checkbox"> $16-$20/pax</label></li>
+          <li><label><input type="checkbox"> $21-$25/pax</label></li>
+        </ul>
+      </div>
+      <div>
+        <h4>No. of Pax</h4>
+        <ul>
+          <li><label><input type="checkbox"> 10 pax and below</label></li>
+          <li><label><input type="checkbox"> 11-20 pax</label></li>
+          <li><label><input type="checkbox"> 21-30 pax</label></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Delivery Type</h4>
+        <ul>
+          <li><label><input type="checkbox"> Delivery</label></li>
+          <li><label><input type="checkbox"> Self Collection</label></li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- Menu Section -->
+    <main class="menu">
+      <div class="menu-header">
+        <h2>All Menus</h2>
+        <select>
+          <option>Recommended</option>
+          <option>Price: Low to High</option>
+          <option>Price: High to Low</option>
+        </select>
+      </div>
+      <div class="menu-grid">
+        <!-- Individual Menu Items -->
+        <div class="menu-item">
+          <div class="most-ordered">Most Ordered</div>
+          <img src="images/dish1.jpg" alt="Dish">
+          <h3>VALUE-A</h3>
+          <p class="price">$13.99/PAX <span>$15.43 w/GST</span></p>
+          <p>8 courses • min 10 pax</p>
+        </div>
+        <div class="menu-item">
+          <div class="most-ordered">Most Ordered</div>
+          <img src="images/dish2.jpg" alt="Dish">
+          <h3>VALUE-B</h3>
+          <p class="price">$14.99/PAX <span>$16.04 w/GST</span></p>
+          <p>8 courses • min 20 pax</p>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2024 CaterDash. All Rights Reserved.</p>
+    <p>
+      <a href="#">Privacy Policy</a> |
+      <a href="#">Terms of Service</a> |
+      <a href="#">Contact Us</a>
+    </p>
+  </footer>
+
+</body>
+</html>
