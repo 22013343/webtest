@@ -97,6 +97,88 @@
       text-decoration: none;
       margin: 0 10px;
     }
+        .best-sellers {
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .best-sellers h2 {
+      margin-bottom: 30px;
+      font-size: 2em;
+      color: #333;
+    }
+
+    .seller-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .seller-item {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      text-align: center;
+      padding: 15px;
+      transition: transform 0.2s ease-in-out;
+    }
+
+    .seller-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px 10px 0 0;
+    }
+
+    .seller-item h3 {
+      margin: 15px 0 10px;
+      font-size: 1.2em;
+      color: #333;
+    }
+
+    .price-section {
+      color: #C30010;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .price-section span {
+      color: gray;
+      font-size: 0.9em;
+    }
+
+    .details {
+      font-size: 0.9em;
+      color: #666;
+    }
+
+    .view-more {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 10px 20px;
+      background: none;
+      border: 2px solid #C30010;
+      color: #C30010;
+      border-radius: 5px;
+      font-size: 1em;
+      font-weight: bold;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .view-more:hover {
+      background: #C30010;
+      color: white;
+    }
+
+    .seller-item:hover {
+      transform: translateY(-5px);
+    }
   </style>
 </head>
 <body>
@@ -170,17 +252,21 @@
   <section class="best-sellers">
     <h2>Buffet Best Sellers</h2>
     <div class="seller-grid">
+      <!-- Individual Buffet Items -->
       <div class="seller-item">
-        <img src="dish1.jpg" alt="Dish">
-        <h3>Dish 1</h3>
-        <p>$12.99</p>
+        <img src="images/Mini Buffet C.jpg" alt="Buffet Item">
+        <h3>Mini Buffet - C</h3>
+        <p class="price-section">$15.99/PAX <span>$17.43 w/GST</span></p>
+        <p class="details">9 courses • min 20 pax</p>
       </div>
       <div class="seller-item">
-        <img src="dish2.jpg" alt="Dish">
-        <h3>Dish 2</h3>
-        <p>$14.99</p>
+        <img src="images/Deluxe A.jpg" alt="Buffet Item">
+        <h3>Deluxe A</h3>
+        <p class="price-section">$21.99/PAX <span>$23.97 w/GST</span></p>
+        <p class="details">9 courses • min 30 pax</p>
       </div>
     </div>
+    <a href="#" class="view-more">View More</a>
   </section>
 
   <!-- Why CaterDash Section -->
