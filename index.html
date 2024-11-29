@@ -150,6 +150,25 @@
       grid-template-columns: 1fr;
     }
   }
+  .view-more {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 10px 20px;
+  background: #C30010; /* Set background color to red */
+  border: none; /* Remove border */
+  color: white; /* Set text color to white */
+  border-radius: 5px; /* Add rounded corners */
+  font-size: 1em;
+  font-weight: bold;
+  text-decoration: none; /* Remove underline */
+  cursor: pointer; /* Change cursor to pointer */
+  transition: background 0.3s ease, transform 0.2s ease; /* Add hover effects */
+}
+
+.view-more:hover {
+  background: #a10e26; /* Darker red on hover */
+  transform: scale(1.05); /* Slightly enlarge the button on hover */
+}
 </style>
 </head>
 <body>
@@ -237,7 +256,7 @@
         <p class="details">9 courses • min 30 pax</p>
       </div>
     </div>
-    <a href="#" class="view-more">View More</a>
+    <a href="" class="view-more">View More</a>
   </section>
 
   <!-- Why CaterDash Section -->
