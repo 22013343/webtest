@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You - CaterDash</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #FAF8F5;
+      padding: 20px;
+      text-align: center;
+    }
+    header {
+      background-color: #C30010;
+      color: white;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      padding: 10px 20px;
+      font-style: italic;
+      font-weight: bold;
+      text-align: center;
+    }
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      color: white;
+      margin-bottom: 20px;
+    }
+    .order-summary {
+      text-align: left;
+      margin-top: 20px;
+    }
+    .order-summary h2 {
+      color: #333;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+    table th, table td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+    table th {
+      background-color: #f2f2f2;
+    }
+    .button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #C30010;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    .button:hover {
+      background-color: #a10e26;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Thank You for Your Order!</h1>
+  </header>
+  <div class="container">
+    <h1>Order Complete</h1>
+    <p>Your order has been successfully placed. Below are your order details:</p>
+
+    <div class="order-summary">
+      <h2>Order Summary</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Category</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody id="order-details">
+          <!-- Order items will be dynamically populated -->
+        </tbody>
+      </table>
+      <p><strong>Total: $<span id="total-value">0.00</span></strong></p>
+    </div>
+
+    <a href="index.html" class="button">Return to Home</a>
+  </div>
+
+  <!-- Matomo -->
+  <script>
+    var _paq = window._paq = window._paq || [];
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="https://tracker.neogroup.com.sg/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+    })();
+
+    // Retrieve order data from local storage
+    const orderData = JSON.parse(localStorage.getItem('orderData')) || { items: [], totalValue: 0, orderId: null };
+
+    const orderDetailsTable = document.getElementById('order-details');
+    const totalValueElement = document.getElementById('total-value');
+
+    // Populate the order table
+    orderData.items.forEach(item => {
+      const row = document.createElement('tr');
+      row.innerHTML = `
+        <td>${item.id}</td>
+        <td>${item.category}</td>
+        <td>$${item.price.toFixed(2)}</td>
+      `;
+      orderDetailsTable.appendChild(row);
+    });
+
+    // Display the total value
+    totalValueElement.textContent = orderData.totalValue.toFixed(2);
+
+    // Track order completion in Matomo
+    if (orderData.orderId) {
+      _paq.push(['trackEcommerceOrder', orderData.orderId, orderData.totalValue]);
+      console.log(`Order tracked in Matomo: ID=${orderData.orderId}, Total=$${orderData.totalValue.toFixed(2)}`);
+    }
+  </script>
+</body>
+</html>
