@@ -56,15 +56,17 @@
     }
 .filters {
   flex: 1;
-  background: white;
+  background: white; /* Ensure a visible background color */
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  color: #333; /* Set a visible font color for the text */
 }
 
-.filters h3 {
+.filters h3, .filters h4 {
   margin-bottom: 15px;
-  color: #C30010;
+  color: #C30010; /* Use a vibrant red for headings */
+  font-weight: bold; /* Ensure the headings stand out */
 }
 
 .filters ul {
@@ -78,12 +80,12 @@
 
 .filters ul li label {
   font-size: 0.9em;
+  color: #333; /* Ensure label text is visible */
 }
 
 .filters ul li input {
   margin-right: 10px;
 }
-
     .menu {
       flex: 3;
     }
@@ -218,7 +220,6 @@
     </ul>
   </div>
 </aside>
-
 
     <!-- Menu Section -->
     <main class="menu">
