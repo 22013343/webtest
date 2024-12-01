@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - CaterDash</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #FAF8F5;
+    }
+    header {
+      background-color: #C30010;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+    }
+    header img {
+      height: 50px;
+    }
+    header nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+    header .user-options {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 40px 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      color: #C30010;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+    label {
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+    input, textarea, button {
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 1em;
+    }
+    textarea {
+      resize: vertical;
+    }
+    button {
+      background-color: #C30010;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #A0000B;
+    }
+    .contact-info {
+      text-align: center;
+      margin-top: 30px;
+    }
+    .contact-info p {
+      margin: 10px 0;
+    }
+    .contact-info a {
+      color: #C30010;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    footer {
+      background-color: black;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+    footer a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div>
+      <a href="index.html"><img src="images/Generated logo5.jpg" alt="CaterDash Logo"></a>
+    </div>
+    <nav>
+      <a href="buffet.html">Buffet</a>
+      <a href="bento.html">Bento</a>
+      <a href="aboutUs.html">About Us</a>
+      <a href="contactUs.html">Contact</a>
+    </nav>
+    <div class="user-options">
+      <a href="login.html" style="color: white; text-decoration: none; font-weight: bold; border: 1px solid white; padding: 5px 10px; border-radius: 20px;">Log In / Sign Up</a>
+      <a href="cart.html" style="position: relative; color: white; text-decoration: none;">
+        <img src="images/avf7f2ncu.jpg" alt="Cart Icon" style="height: 24px;">
+        <span style="position: absolute; top: -5px; right: -10px; background: red; color: white; font-size: 12px; padding: 2px 5px; border-radius: 50%;">0</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Contact Form -->
+  <div class="container">
+    <h1>Contact Us</h1>
+    <form action="submitContact.php" method="post">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+
+      <label for="subject">Subject</label>
+      <input type="text" id="subject" name="subject" placeholder="Enter the subject" required>
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" placeholder="Write your message here" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+
+    <div class="contact-info">
+      <h3>Or reach out to us directly:</h3>
+      <p>Email: <a href="mailto:contact@caterdash.com">contact@caterdash.com</a></p>
+      <p>Phone: <a href="tel:+123456789">+65 6770 0986</a></p>
+      <p>Address: 30B Quality Rd, Singapore 618826</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 CaterDash. All Rights Reserved.</p>
+    <p>
+      <a href="#">Privacy Policy</a> |
+      <a href="#">Terms of Service</a> |
+      <a href="contactUs.html">Contact Us</a>
+    </p>
+  </footer>
+
+</body>
+</html>
