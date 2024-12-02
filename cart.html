@@ -3,154 +3,176 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Cart - CaterDash</title>
+  <title>Cart - CaterDash</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      padding: 20px;
+      margin: 0;
+      padding: 0;
       background-color: #FAF8F5;
     }
     header {
-            background-color: #C30010;
+      background-color: #C30010;
       color: white;
-      font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
-      padding: 10px 20px;
-      text-align: center;
-      border-bottom: 1px solid #ddd;
-      font-style: italic; 
-      font-weight: bold;  
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+    }
+    header img {
+      height: 50px;
+    }
+    header nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+    header .cart {
+      position: relative;
+    }
+    header .cart img {
+      height: 24px;
+    }
+    header .cart span {
+      position: absolute;
+      top: -5px;
+      right: -10px;
+      background: red;
+      color: white;
+      font-size: 12px;
+      padding: 2px 5px;
+      border-radius: 50%;
     }
     .container {
-      max-width: 800px;
+      max-width: 1200px;
       margin: auto;
-      background: white;
       padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     }
-    h1 {
-      color: white;
-    }
-    table {
+    .cart-table {
       width: 100%;
       border-collapse: collapse;
-      margin: 20px 0;
+      margin-bottom: 20px;
     }
-    table th, table td {
+    .cart-table th, .cart-table td {
+      padding: 15px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    .cart-table th {
+      background-color: #f9f9f9;
+      color: #C30010;
+    }
+    .cart-actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .cart-summary {
+      margin-top: 20px;
       border: 1px solid #ddd;
-      padding: 8px;
-      text-align: center;
+      padding: 15px;
+      border-radius: 10px;
+      background: white;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     }
-    table th {
-      background-color: #f2f2f2;
+    .cart-summary h3 {
+      margin: 0 0 15px;
+      color: #C30010;
     }
-    .button {
-      display: inline-block;
-      padding: 10px 20px;
+    .cart-summary .summary-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+    .cart-summary .summary-item.total {
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+    .cart-summary button {
+      width: 100%;
+      padding: 10px;
+      background-color: #C30010;
       color: white;
-      background-color: #C3102F;
-      text-decoration: none;
+      border: none;
       border-radius: 5px;
-      margin: 10px 0;
-      text-align: center;
+      font-size: 1em;
+      cursor: pointer;
     }
-    .button:hover {
-      background-color: #a10e26;
+    .cart-summary button:hover {
+      background-color: #A0000B;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Your Cart</h1>
-  </header>
-  <div class="container">
-    <h1>Order Summary</h1>
-    <table>
-      <thead>
-        <tr>
-          <th>Item</th>
-          <th>Category</th>
-          <th>Price</th>
-        </tr>
-      </thead>
-      <tbody id="cart-items">
-        <!-- Cart items will be dynamically populated -->
-      </tbody>
-    </table>
-    <div style="text-align: center;">
-      <a href="index.html" class="button">Continue Shopping</a>
-      <a id="proceedCheckout" href="thankyou.html" class="button">Proceed to Checkout</a>
-    </div>
+
+<header>
+  <div>
+    <a href="index.html"><img src="images/Generated logo5.jpg" alt="CaterDash Logo"></a>
+  </div>
+  <nav>
+    <a href="buffet.html">Buffet</a>
+    <a href="bento.html">Bento</a>
+    <a href="aboutUs.html">About Us</a>
+    <a href="contactUs.html">Contact</a>
+  </nav>
+  <div class="cart">
+    <a href="cart.html"><img src="images/cart-icon.png" alt="Cart"><span>2</span></a>
+  </div>
+</header>
+
+<div class="container">
+  <h1>Your Cart</h1>
+  <table class="cart-table">
+    <thead>
+      <tr>
+        <th>Item</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Subtotal</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Dynamic rows -->
+      <tr>
+        <td>Vegetarian Package</td>
+        <td>$15.99</td>
+        <td><input type="number" value="1" min="1" style="width: 50px;"></td>
+        <td>$15.99</td>
+        <td><button>Remove</button></td>
+      </tr>
+      <tr>
+        <td>Deluxe Buffet</td>
+        <td>$25.99</td>
+        <td><input type="number" value="2" min="1" style="width: 50px;"></td>
+        <td>$51.98</td>
+        <td><button>Remove</button></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="cart-actions">
+    <button onclick="window.location.href='buffet.html'">Continue Shopping</button>
   </div>
 
-  <script>
-  var _paq = window._paq = window._paq || [];
-  _paq.push(['trackPageView']);
-  _paq.push(['enableLinkTracking']);
-  (function() {
-    var u="https://tracker.neogroup.com.sg/";
-    _paq.push(['setTrackerUrl', u+'matomo.php']);
-    _paq.push(['setSiteId', '']);
-    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
-  })();
+  <div class="cart-summary">
+    <h3>Order Summary</h3>
+    <div class="summary-item">
+      <span>Subtotal:</span>
+      <span>$67.97</span>
+    </div>
+    <div class="summary-item">
+      <span>Delivery Fee:</span>
+      <span>$10.00</span>
+    </div>
+    <div class="summary-item total">
+      <span>Total:</span>
+      <span>$77.97</span>
+    </div>
+    <button onclick="window.location.href='checkout.html'">Proceed to Checkout</button>
+  </div>
+</div>
 
-  // Retrieve cart data from local storage
-  const cartData = JSON.parse(localStorage.getItem('cartItems')) || { validDishes: [], validVegetable: null };
-
-  const cartTableBody = document.getElementById('cart-items');
-
-  // Populate the cart table and send eCommerce tracking data to Matomo
-  cartData.validDishes.forEach(dish => {
-    const row = document.createElement('tr');
-    row.innerHTML = `
-      <td>${dish.id}</td>
-      <td>${dish.category}</td>
-      <td>$${dish.price.toFixed(2)}</td>
-    `;
-    cartTableBody.appendChild(row);
-
-    // Track each item in the cart as an eCommerce item
-    _paq.push(['addEcommerceItem', dish.id, dish.id, dish.category, dish.price, 1]);
-  });
-
-  if (cartData.validVegetable) {
-    const row = document.createElement('tr');
-    row.innerHTML = `
-      <td>${cartData.validVegetable.id}</td>
-      <td>${cartData.validVegetable.category}</td>
-      <td>$${cartData.validVegetable.price.toFixed(2)}</td>
-    `;
-    cartTableBody.appendChild(row);
-
-    // Track the selected vegetable as an eCommerce item
-    _paq.push(['addEcommerceItem', cartData.validVegetable.id, cartData.validVegetable.id, cartData.validVegetable.category, cartData.validVegetable.price, 1]);
-  }
-
-  // Track the cart as an eCommerce cart
-  const totalValue = cartData.validDishes.reduce((sum, dish) => sum + dish.price, 0) +
-    (cartData.validVegetable ? cartData.validVegetable.price : 0);
-  _paq.push(['trackEcommerceCartUpdate', totalValue]);
-
-  console.log(`Cart tracked with total value: $${totalValue}`);
-
-  // Track checkout when the "Proceed to Checkout" button is clicked
-  document.getElementById('proceedCheckout').addEventListener('click', function() {
-    const orderId = `ORDER-${Date.now()}`;
-
-    // Add all items in the cart to the eCommerce order
-    cartData.validDishes.forEach(dish => {
-      _paq.push(['addEcommerceItem', dish.id, dish.id, dish.category, dish.price, 1]);
-    });
-
-    if (cartData.validVegetable) {
-      _paq.push(['addEcommerceItem', cartData.validVegetable.id, cartData.validVegetable.id, cartData.validVegetable.category, cartData.validVegetable.price, 1]);
-    }
-
-    // Track the eCommerce order
-    _paq.push(['trackEcommerceOrder', orderId, totalValue]);
-    console.log(`Checkout tracked with Order ID: ${orderId}, Total Value: $${totalValue}`);
-  });
-  </script>
 </body>
 </html>
