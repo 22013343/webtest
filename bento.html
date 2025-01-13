@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CaterDash - Menu</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #FAF8F5;
+    }
+    header {
+      background-color: #C30010;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+    }
+    header img {
+      height: 50px;
+    }
+    header nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+    header .user-options {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    header .cart {
+      position: relative;
+    }
+    header .cart img {
+      height: 24px;
+    }
+    header .cart span {
+      position: absolute;
+      top: -5px;
+      right: -10px;
+      background: red;
+      color: white;
+      font-size: 12px;
+      padding: 2px 5px;
+      border-radius: 50%;
+    }
+    .container {
+      display: flex;
+      padding: 20px;
+      gap: 20px;
+    }
+    .filters {
+      flex: 1;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      color: #333;
+    }
+    .filters h3, .filters h4 {
+      margin-bottom: 15px;
+      color: #C30010;
+      font-weight: bold;
+    }
+    .filters ul {
+      list-style: none;
+      padding: 0;
+    }
+    .filters ul li {
+      margin-bottom: 10px;
+    }
+    .filters ul li label {
+      font-size: 0.9em;
+      color: #333;
+    }
+    .filters ul li input {
+      margin-right: 10px;
+    }
+    .menu {
+      flex: 3;
+    }
+    .menu-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .menu-header h2 {
+      font-size: 1.5em;
+      color: #333;
+    }
+    .menu-header select {
+      padding: 5px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .menu-item {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      overflow: hidden;
+      position: relative;
+    }
+    .menu-item img {
+      width: 100%;
+      height: auto;
+    }
+    .menu-item h3 {
+      margin: 10px 0;
+    }
+    .menu-item p {
+      margin: 5px 0;
+    }
+    .menu-item .price {
+      font-size: 1em;
+      color: #C30010;
+      font-weight: bold;
+    }
+    .menu-item .price span {
+      font-size: 0.8em;
+      color: gray;
+    }
+    .menu-item .most-ordered {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: #C30010;
+      color: white;
+      padding: 5px 10px;
+      font-size: 0.8em;
+      border-radius: 5px;
+    }
+    .footer {
+      background: black;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    .footer a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div>
+      <a href="index.html">
+        <img src="images/Generated logo5.jpg" alt="CaterDash Logo">
+      </a>
+    </div>
+    <nav>
+      <a href="buffet.html">Buffet</a>
+      <a href="bento.html">Bento</a>
+      <a href="aboutUs.html">About Us</a>
+      <a href="contactUs.html">Contact</a>
+    </nav>
+    <div class="user-options">
+      <a href="login.html" class="login">Log In / Sign Up</a>
+      <div class="cart">
+        <a href="cart.html">
+          <img src="images/cart_icon.jpg" alt="Cart Icon">
+          <span>0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <div class="container">
+    <!-- Filters -->
+    <aside class="filters">
+      <h3>Filters</h3>
+      <div>
+        <h4>Bento Type</h4>
+        <ul>
+          <li><label><input type="checkbox"> All Bentos</label></li>
+          <li><label><input type="checkbox"> Vegetarian</label></li>
+          <li><label><input type="checkbox"> Non-Vegetarian</label></li>
+          <li><label><input type="checkbox"> Premium</label></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Budget</h4>
+        <ul>
+          <li><label><input type="checkbox"> $8-$12</label></li>
+          <li><label><input type="checkbox"> $13-$18</label></li>
+          <li><label><input type="checkbox"> $19 and above</label></li>
+        </ul>
+      </div>
+      <div>
+        <h4>No. of Pax</h4>
+        <ul>
+          <li><label><input type="checkbox"> 1-5 pax</label></li>
+          <li><label><input type="checkbox"> 6-10 pax</label></li>
+          <li><label><input type="checkbox"> 11-20 pax</label></li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- Menu Section -->
+    <main class="menu">
+      <div class="menu-header">
+        <h2>Bento Selection</h2>
+        <select>
+          <option>Recommended</option>
+          <option>Price: Low to High</option>
+          <option>Price: High to Low</option>
+        </select>
+      </div>
+      <div class="menu-grid">
+        <!-- Individual Menu Items -->
+        <div class="menu-item">
+          <div class="most-ordered">Most Ordered</div>
+          <img src="images/bento1.jpg" alt="Bento Box">
+          <h3>Vegetarian Bento</h3>
+          <p class="price">$12.99 <span>($13.90 w/GST)</span></p>
+          <p>Includes 5 items</p>
+        </div>
+        <div class="menu-item">
+          <img src="images/bento2.jpg" alt="Bento Box">
+          <h3>Chicken Teriyaki Bento</h3>
+          <p class="price">$15.99 <span>($17.10 w/GST)</span></p>
+          <p>Includes 6 items</p>
+          <a href="Bcustom.html?package=chicken" class="customize-button">Customize</a>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2024 CaterDash. All Rights Reserved.</p>
+    <p>
+      <a href="#">Privacy Policy</a> |
+      <a href="#">Terms of Service</a> |
+      <a href="#">Contact Us</a>
+    </p>
+  </footer>
+
+</body>
+</html>
