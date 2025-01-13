@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - CaterDash</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #FAF8F5;
+      color: #333;
+    }
+    header {
+      background-color: #C30010;
+      color: white;
+      padding: 15px 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+    main {
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    main h2 {
+      color: #C30010;
+      margin-bottom: 10px;
+    }
+    main p {
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    main ul {
+      list-style: none;
+      padding: 0;
+    }
+    main ul li {
+      margin-bottom: 10px;
+    }
+    footer {
+      background: black;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 20px;
+    }
+    footer a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>About Us</h1>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <h2>Welcome to CaterDash</h2>
+    <p>
+      At CaterDash, we believe that great food brings people together. Founded with a passion for culinary excellence and a commitment to impeccable service, we aim to be your go-to choice for catering that impresses every time. Whether it's a corporate event, a private party, or a family gathering, we bring a delicious touch to every occasion.
+    </p>
+
+    <h2>Our Mission</h2>
+    <p>
+      Our mission is to make catering seamless and delightful. We focus on providing a wide variety of high-quality dishes that cater to diverse tastes and dietary needs, ensuring that every guest leaves satisfied.
+    </p>
+
+    <h2>Why Choose CaterDash?</h2>
+    <ul>
+      <li><strong>Diverse Menus:</strong> From buffets to bento boxes, we offer a range of customizable menu options.</li>
+      <li><strong>Quality Ingredients:</strong> We use only the freshest and finest ingredients to craft our dishes.</li>
+      <li><strong>Seamless Experience:</strong> Our user-friendly platform makes it easy to browse, customize, and order.</li>
+      <li><strong>Reliable Service:</strong> Punctual delivery and professional setup ensure a stress-free event.</li>
+    </ul>
+
+    <h2>Our Story</h2>
+    <p>
+      CaterDash started as a small, family-run business with a big dream: to make every event memorable with outstanding food and service. Over the years, we have grown into a trusted name in the catering industry, serving countless happy clients across the region. Our commitment to innovation and customer satisfaction keeps us moving forward.
+    </p>
+
+    <h2>Contact Us</h2>
+    <p>
+      We would love to hear from you! Whether you have a question, need assistance with an order, or want to share your feedback, feel free to reach out to us.
+    </p>
+    <p>
+      <strong>Email:</strong> support@caterdash.com<br>
+      <strong>Phone:</strong> +1 (123) 456-7890<br>
+      <strong>Address:</strong> 123 Foodie Lane, Culinary City, Gourmetland 56789
+    </p>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 CaterDash. All Rights Reserved.</p>
+    <p>
+      <a href="#">Privacy Policy</a> |
+      <a href="#">Terms of Service</a> |
+      <a href="#">Contact Us</a>
+    </p>
+  </footer>
+
+</body>
+</html>
